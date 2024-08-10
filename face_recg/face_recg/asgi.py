@@ -1,5 +1,5 @@
 """
-ASGI config for facerecognition project.
+ASGI config for face_recg project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'facerecognition.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'face_recg.settings')
 
 application = get_asgi_application()

@@ -1,7 +1,7 @@
 # FaceRecognition
  A face recognition based sign-in sign-up made in Python, ReactJS and PostgreSQL
 
-# Dependencies
+## Dependencies
 - Python `v3.9`, pip `v24.2` and libraries in requirements.txt
 - ReactJS
 - PostgreSQL Database *(on a Docker container or Linux server)*
