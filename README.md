@@ -6,6 +6,6 @@
 - ReactJS
 - PostgreSQL Database(Docker container/Linux server)
 - A working Dlib installation with pip install dlib but it has the following external dependencies:
-    - CMake version `v3.30.2` added to PATH(face-recognition library dependency)(Windows specific, pre-installed on linux)
-    - Visual Studio Desktop development with `C++ workload` with `C++ CMake tools` and `MSVC` options installed(Windows specific)
-- A virtual environment to avoid version conflicts(here named 'recg')
+    - CMake version `v3.30.2` added to PATH *(face-recognition library dependency)* **(Windows specific, pre-installed on linux)**
+    - Visual Studio Desktop development with `C++ workload` with `C++ CMake tools` and `MSVC` options installed **(Windows specific)**
+- A virtual environment to avoid version conflicts *(here, named 'recg')*
