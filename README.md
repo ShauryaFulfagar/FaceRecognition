@@ -10,4 +10,4 @@
     - Visual Studio Desktop development with `C++ workload` with `C++ CMake tools` and `MSVC` options installed **(Windows specific)**
 - A virtual environment to avoid version conflicts *(here, named 'recg')*
 
-**STARTED ON 10/8/24, UNDER DEVELOPMENT**
+**STARTED ON 11/8/24, UNDER DEVELOPMENT**
