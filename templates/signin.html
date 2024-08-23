@@ -1,18 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
 </head>
 <body>
     <h1>Sign In</h1>
-    <video id="video" width="640" height="480" autoplay></video>
-    <button id="capture">Capture</button>
-    <canvas id="canvas" width="640" height="480"></canvas>
-    <form id="signin-form" action="/signin" method="post">
-        <input type="hidden" id="image-data" name="image">
+    <form method="POST" enctype="multipart/form-data">
+        <button type="button" onclick="capture()">Capture Image</button><br><br>
+        <input type="hidden" name="image" id="image">
         <button type="submit">Sign In</button>
     </form>
-    <a href="/">Sign Up</a>
-    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    <video id="video" width="640" height="480" autoplay></video>
+    <canvas id="canvas" style="display:none;"></canvas>
+
+    <script>
+        const video = document.getElementById('video');
+
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+            });
+
+        function capture() {
+            const canvas = document.getElementById('canvas');
+            const context = canvas.getContext('2d');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            context.drawImage(video, 0, 0);
+            const imageData = canvas.toDataURL('image/png');
+            document.getElementById('image').value = imageData;
+        }
+    </script>
 </body>
 </html>
