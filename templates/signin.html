@@ -15,23 +15,6 @@
     <video id="video" width="640" height="480" autoplay></video>
     <canvas id="canvas" style="display:none;"></canvas>
 
-    <script>
-        const video = document.getElementById('video');
-
-        navigator.mediaDevices.getUserMedia({ video: true })
-            .then(stream => {
-                video.srcObject = stream;
-            });
-
-        function capture() {
-            const canvas = document.getElementById('canvas');
-            const context = canvas.getContext('2d');
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight;
-            context.drawImage(video, 0, 0);
-            const imageData = canvas.toDataURL('image/png');
-            document.getElementById('image').value = imageData;
-        }
-    </script>
+    <script src="{{ url_for('static', filename='signin.js') }}"></script>
 </body>
 </html>
