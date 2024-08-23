@@ -9,3 +9,11 @@ h1 {
 form {
     margin: 20px;
 }
+
+video {
+    border: 1px solid #ddd;
+}
+
+button {
+    margin-top: 10px;
+}

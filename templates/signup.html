@@ -5,11 +5,15 @@
 </head>
 <body>
     <h1>Sign Up</h1>
-    <form action="/signup" method="post" enctype="multipart/form-data">
-        <input type="text" name="name" placeholder="Name" required><br>
-        <input type="file" name="image" accept="image/*" required><br>
+    <video id="video" width="640" height="480" autoplay></video>
+    <button id="capture">Capture</button>
+    <canvas id="canvas" width="640" height="480"></canvas>
+    <form id="signup-form" action="/signup" method="post">
+        <input type="text" id="name" name="name" placeholder="Name" required><br>
+        <input type="hidden" id="image-data" name="image">
         <button type="submit">Sign Up</button>
     </form>
     <a href="/signin">Sign In</a>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
 </html>
