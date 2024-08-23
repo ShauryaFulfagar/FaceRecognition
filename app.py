@@ -5,9 +5,10 @@ import cv2
 import face_recognition
 import psycopg2
 from flask import Flask, render_template, request, redirect, url_for, flash, session
+import details
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'supersecretkey'
+app.config['SECRET_KEY'] = details.secretKey
 
 # PostgreSQL connection
 conn = psycopg2.connect(
