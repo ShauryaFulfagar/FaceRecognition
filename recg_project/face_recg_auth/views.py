@@ -1,7 +1,6 @@
 import io
 import base64
 import numpy as np
-import cv2
 import face_recognition
 from django.shortcuts import render, redirect
 from django.contrib import messages
@@ -37,6 +36,7 @@ def signin(request):
                 stored_encoding = np.frombuffer(user.embedding, dtype=np.float64)
                 match = face_recognition.compare_faces([stored_encoding], face_encoding)[0]
                 if match:
+                    request.session['user_name'] = user.name
                     messages.success(request, f'Welcome back, {user.name}!')
                     return redirect('home')
             messages.error(request, 'No match found. Please sign up.')
@@ -45,4 +45,11 @@ def signin(request):
     return render(request, 'signin.html')
 
 def home(request):
-    return render(request, 'home.html')
+    user_name = request.session.get('user_name', None)
+    if not user_name:
+        return redirect('index')
+    return render(request, 'home.html', {'user_name': user_name})
+
+def logout(request):
+    request.session.flush()
+    return redirect('index')
