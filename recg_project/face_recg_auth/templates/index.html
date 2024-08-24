@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Face Recognition App</title>
 </head>
 <body>
     <h1>Welcome to the Face Recognition App</h1>
-    <a href="{{ url_for('signup') }}">Sign Up</a><br>
-    <a href="{{ url_for('signin') }}">Sign In</a>
+    <a href="{% url 'signup' %}">Sign Up</a><br>
+    <a href="{% url 'signin' %}">Sign In</a>
 </body>
 </html>
