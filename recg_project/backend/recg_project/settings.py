@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+SESSION_ENGINE = 'django.contrib.sessions.backends.file'
 
 INSTALLED_APPS = [
     # Django default apps
@@ -76,17 +77,6 @@ WSGI_APPLICATION = 'recg_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'face_recg_db',
-        'USER': 'recg_user',
-        'PASSWORD': 'recg_pass',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -121,6 +111,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.dummy',
+    }
+}
 
 STATIC_URL = '/static/'
 
