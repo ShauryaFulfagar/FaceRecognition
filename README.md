@@ -1,9 +1,7 @@
 # FaceRecognition
-
 A face recognition based sign-in sign-up made in Python with Django, ReactJS and Firebase's cloud firestore.
 
 ## Dependencies
-
 - Python `v3.9` and libraries in requirements.txt using `pip install -r requirements.txt`.
 - A Firebase project with cloud firestore database.
 - A working Dlib installation with pip install dlib, but it has the following external dependencies:
